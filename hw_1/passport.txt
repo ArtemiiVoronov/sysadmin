@@ -1,0 +1,312 @@
+Windows PowerShell
+(C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+Попробуйте новую кроссплатформенную оболочку PowerShell (https://aka.ms/pscore6)
+
+PS C:\Users\Clancy> ssh root@194.226.166.63
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.8.0-85-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue Sep  8 06:55:40 PM MSK 2026
+
+  System load:  0.0               Processes:             102
+  Usage of /:   14.7% of 9.76GB   Users logged in:       1
+  Memory usage: 21%               IPv4 address for ens3: 192.168.0.211
+  Swap usage:   0%
+
+ * Canonical Workshop gives developers fast, composable, reproducible, and
+   secure developer environments that are perfect for agentic workflows.
+
+   https://ubuntu.com/workshop
+
+Expanded Security Maintenance for Applications is not enabled.
+
+235 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Tue Sep  8 18:44:59 2026 from 37.153.53.18
+root@cv7951365:~# #
+root@cv7951365:~# #
+root@cv7951365:~# #Имя пользователя под который я работаю
+root@cv7951365:~# #
+root@cv7951365:~# whoami
+root
+root@cv7951365:~# #
+root@cv7951365:~# # Числовые идентификаторы моего пользователя
+root@cv7951365:~# #
+root@cv7951365:~# id
+uid=0(root) gid=0(root) groups=0(root)
+root@cv7951365:~# #
+root@cv7951365:~# # Информация о ядре ВМ на которой я работаю
+root@cv7951365:~# #
+root@cv7951365:~# uname -a
+Linux cv7951365.novalocal 6.8.0-85-generic #85-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep 18 15:26:59 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+root@cv7951365:~# #
+root@cv7951365:~# # Версия и дистрибутив Linux
+root@cv7951365:~# #
+root@cv7951365:~# cat /etc/os-release
+PRETTY_NAME="Ubuntu 24.04.3 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.3 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=noble
+LOGO=ubuntu-logo
+root@cv7951365:~# #
+root@cv7951365:~# # Нагрузка и время работы ВМ
+root@cv7951365:~# #
+root@cv7951365:~# uptime
+ 19:01:05 up 1 day, 22:47,  3 users,  load average: 0.00, 0.00, 0.00
+root@cv7951365:~# #
+root@cv7951365:~# # Задействуемая оперативная память
+root@cv7951365:~# #
+root@cv7951365:~# free -h
+               total        used        free      shared  buff/cache   available
+Mem:           960Mi       312Mi       345Mi       4.9Mi       458Mi       647Mi
+Swap:             0B          0B          0B
+root@cv7951365:~# #
+root@cv7951365:~# # Занятость дискового пространства
+root@cv7951365:~# #
+root@cv7951365:~# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            97M  1.0M   96M   2% /run
+/dev/sda1       9.8G  1.5G  7.9G  16% /
+tmpfs           481M     0  481M   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs            97M  8.0K   97M   1% /run/user/0
+root@cv7951365:~# #
+root@cv7951365:~# # Физическая структура диска
+root@cv7951365:~# #
+root@cv7951365:~# lsblk
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+sda      8:0    0   10G  0 disk
+└─sda1   8:1    0   10G  0 part /
+sr0     11:0    1  506K  0 rom
+root@cv7951365:~# #
+root@cv7951365:~# # Количество доступных ядер CPU
+root@cv7951365:~# #
+root@cv7951365:~# nproc
+1
+root@cv7951365:~# #
+root@cv7951365:~# # Активные процессы
+root@cv7951365:~# #
+root@cv7951365:~# ps aux | head
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  1.3  22208 13280 ?        Ss   Sep06   0:04 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    Sep06   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    Sep06   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   Sep06   0:00 [kworker/R-rcu_g]
+root           5  0.0  0.0      0     0 ?        I<   Sep06   0:00 [kworker/R-rcu_p]
+root           6  0.0  0.0      0     0 ?        I<   Sep06   0:00 [kworker/R-slub_]
+root           7  0.0  0.0      0     0 ?        I<   Sep06   0:00 [kworker/R-netns]
+root           9  0.0  0.0      0     0 ?        I<   Sep06   0:00 [kworker/0:0H-events_highpri]
+root          12  0.0  0.0      0     0 ?        I<   Sep06   0:00 [kworker/R-mm_pe]
+root@cv7951365:~# #
+root@cv7951365:~# # Живой монитор процессов
+root@cv7951365:~# #
+root@cv7951365:~# top -bn1 | head -20
+top - 19:08:44 up 1 day, 22:55,  2 users,  load average: 0.02, 0.02, 0.00
+Tasks: 101 total,   1 running, 100 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  9.1 sy,  0.0 ni, 90.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :    960.6 total,    340.7 free,    317.0 used,    458.6 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.    643.6 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0   22208  13280   9568 S   0.0   1.4   0:04.73 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.02 kthreadd
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_wo+
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+
+      7 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+
+      9 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+
+     12 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+
+     13 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tas+
+     14 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tas+
+     15 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tas+
+     16 root      20   0       0      0      0 S   0.0   0.0   0:00.66 ksoftir+
+root@cv7951365:~# #
+root@cv7951365:~# # Детальная информация о состоянии оперативной памяти
+root@cv7951365:~# #
+root@cv7951365:~# cat /proc/meminfo | head -10
+MemTotal:         983668 kB
+MemFree:          324536 kB
+MemAvailable:     635596 kB
+Buffers:           74232 kB
+Cached:           359708 kB
+SwapCached:            0 kB
+Active:           184672 kB
+Inactive:         303100 kB
+Active(anon):      67624 kB
+Inactive(anon):        0 kB
+root@cv7951365:~# #
+root@cv7951365:~# # Содержимое каталога
+root@cv7951365:~# #
+root@cv7951365:~# ls -l /etc/ | head -15
+total 904
+-rw-r--r-- 1 root root       3444 Jul  5  2023 adduser.conf
+drwxr-xr-x 2 root root       4096 Oct  6  2025 alternatives
+drwxr-xr-x 2 root root       4096 Jun 20  2025 apparmor
+drwxr-xr-x 8 root root      12288 Oct  6  2025 apparmor.d
+drwxr-xr-x 3 root root       4096 Oct  6  2025 apport
+drwxr-xr-x 9 root root       4096 Jun 20  2025 apt
+-rw-r--r-- 1 root root       2319 Mar 31  2024 bash.bashrc
+-rw-r--r-- 1 root root         45 Feb 17  2025 bash_completion
+drwxr-xr-x 2 root root       4096 Oct  6  2025 bash_completion.d
+-rw-r--r-- 1 root root        367 Aug  2  2022 bindresvport.blacklist
+drwxr-xr-x 2 root root       4096 Oct 17  2024 binfmt.d
+drwxr-xr-x 2 root root       4096 Feb 17  2025 byobu
+drwxr-xr-x 3 root root       4096 Feb 16  2025 ca-certificates
+-rw-r--r-- 1 root root       6288 Feb 16  2025 ca-certificates.conf
+root@cv7951365:~# #
+root@cv7951365:~# # Модель процессора
+root@cv7951365:~# #
+root@cv7951365:~# cat /proc/cpuinfo | grep "model name" | uniq
+model name      : Intel Xeon Processor (Icelake)
+root@cv7951365:~# #
+root@cv7951365:~# # Дерево процессов в виде иерархии с указанием PID (первые 30 строк)
+root@cv7951365:~# #
+root@cv7951365:~# pstree -p | head -30
+systemd(1)-+-ModemManager(865)-+-{ModemManager}(872)
+           |                   |-{ModemManager}(874)
+           |                   `-{ModemManager}(876)
+           |-agetty(870)
+           |-cron(740)
+           |-dbus-daemon(741)
+           |-fail2ban-server(746)-+-{fail2ban-server}(866)
+           |                      |-{fail2ban-server}(889)
+           |                      |-{fail2ban-server}(890)
+           |                      `-{fail2ban-server}(14051)
+           |-login(1421)---bash(1512)
+           |-multipathd(329)-+-{multipathd}(344)
+           |                 |-{multipathd}(345)
+           |                 |-{multipathd}(346)
+           |                 |-{multipathd}(347)
+           |                 |-{multipathd}(348)
+           |                 `-{multipathd}(349)
+           |-polkitd(765)-+-{polkitd}(846)
+           |              |-{polkitd}(847)
+           |              `-{polkitd}(848)
+           |-qemu-ga(773)---{qemu-ga}(776)
+           |-rsyslogd(845)-+-{rsyslogd}(880)
+           |               |-{rsyslogd}(881)
+           |               `-{rsyslogd}(882)
+           |-sshd(959)---sshd(13837)---bash(13893)-+-head(14087)
+           |                                       `-pstree(14086)
+           |-systemd(1499)---(sd-pam)(1500)
+           |-systemd-journal(277)
+           |-systemd-logind(777)
+           |-systemd-network(649)
+root@cv7951365:~# #
+root@cv7951365:~# # Альтернативный вариант: дерево процессов через ps
+root@cv7951365:~# #
+root@cv7951365:~# ps -ef --forest | head -30
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           2       0  0 Sep06 ?        00:00:00 [kthreadd]
+root           3       2  0 Sep06 ?        00:00:00  \_ [pool_workqueue_release]
+root           4       2  0 Sep06 ?        00:00:00  \_ [kworker/R-rcu_g]
+root           5       2  0 Sep06 ?        00:00:00  \_ [kworker/R-rcu_p]
+root           6       2  0 Sep06 ?        00:00:00  \_ [kworker/R-slub_]
+root           7       2  0 Sep06 ?        00:00:00  \_ [kworker/R-netns]
+root           9       2  0 Sep06 ?        00:00:00  \_ [kworker/0:0H-events_highpri]
+root          12       2  0 Sep06 ?        00:00:00  \_ [kworker/R-mm_pe]
+root          13       2  0 Sep06 ?        00:00:00  \_ [rcu_tasks_kthread]
+root          14       2  0 Sep06 ?        00:00:00  \_ [rcu_tasks_rude_kthread]
+root          15       2  0 Sep06 ?        00:00:00  \_ [rcu_tasks_trace_kthread]
+root          16       2  0 Sep06 ?        00:00:00  \_ [ksoftirqd/0]
+root          17       2  0 Sep06 ?        00:00:01  \_ [rcu_preempt]
+root          18       2  0 Sep06 ?        00:00:00  \_ [migration/0]
+root          19       2  0 Sep06 ?        00:00:00  \_ [idle_inject/0]
+root          20       2  0 Sep06 ?        00:00:00  \_ [cpuhp/0]
+root          21       2  0 Sep06 ?        00:00:00  \_ [kdevtmpfs]
+root          22       2  0 Sep06 ?        00:00:00  \_ [kworker/R-inet_]
+root          23       2  0 Sep06 ?        00:00:00  \_ [kauditd]
+root          24       2  0 Sep06 ?        00:00:00  \_ [khungtaskd]
+root          25       2  0 Sep06 ?        00:00:00  \_ [oom_reaper]
+root          28       2  0 Sep06 ?        00:00:00  \_ [kworker/R-write]
+root          29       2  0 Sep06 ?        00:00:06  \_ [kcompactd0]
+root          30       2  0 Sep06 ?        00:00:00  \_ [ksmd]
+root          31       2  0 Sep06 ?        00:00:00  \_ [khugepaged]
+root          32       2  0 Sep06 ?        00:00:00  \_ [kworker/R-kinte]
+root          33       2  0 Sep06 ?        00:00:00  \_ [kworker/R-kbloc]
+root          34       2  0 Sep06 ?        00:00:00  \_ [kworker/R-blkcg]
+root          35       2  0 Sep06 ?        00:00:00  \_ [irq/9-acpi]
+root@cv7951365:~# #
+root@cv7951365:~# # Статус процесса с PID 1
+root@cv7951365:~# #
+root@cv7951365:~# cat /proc/1/status
+Name:   systemd
+Umask:  0000
+State:  S (sleeping)
+Tgid:   1
+Ngid:   0
+Pid:    1
+PPid:   0
+TracerPid:      0
+Uid:    0       0       0       0
+Gid:    0       0       0       0
+FDSize: 256
+Groups:
+NStgid: 1
+NSpid:  1
+NSpgid: 1
+NSsid:  1
+Kthread:        0
+VmPeak:    22244 kB
+VmSize:    22208 kB
+VmLck:         0 kB
+VmPin:         0 kB
+VmHWM:     13280 kB
+VmRSS:     13280 kB
+RssAnon:            3712 kB
+RssFile:            9568 kB
+RssShmem:              0 kB
+VmData:     3180 kB
+VmStk:       132 kB
+VmExe:        44 kB
+VmLib:     12192 kB
+VmPTE:        84 kB
+VmSwap:        0 kB
+HugetlbPages:          0 kB
+CoreDumping:    0
+THP_enabled:    1
+untag_mask:     0xffffffffffffffff
+Threads:        1
+SigQ:   1/3744
+SigPnd: 0000000000000000
+ShdPnd: 0000000000000000
+SigBlk: 7fefc1fe28014a03
+SigIgn: 0000000000001000
+SigCgt: 00000000000004ec
+CapInh: 0000000000000000
+CapPrm: 000001ffffffffff
+CapEff: 000001ffffffffff
+CapBnd: 000001ffffffffff
+CapAmb: 0000000000000000
+NoNewPrivs:     0
+Seccomp:        0
+Seccomp_filters:        0
+Speculation_Store_Bypass:       thread vulnerable
+SpeculationIndirectBranch:      conditional enabled
+Cpus_allowed:   1
+Cpus_allowed_list:      0
+Mems_allowed:   00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:      0
+voluntary_ctxt_switches:        18354
+nonvoluntary_ctxt_switches:     7351
+x86_Thread_features:
+x86_Thread_features_locked:
+root@cv7951365:~#
